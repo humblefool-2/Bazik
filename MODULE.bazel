@@ -1,0 +1,30 @@
+module(
+    name = "bazik",
+    version = "0.1.0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "rules_java", version = "8.6.1")
+bazel_dep(name = "rules_jvm_external", version = "6.3")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.install(
+    name = "maven",
+    artifacts = [
+        "commons-cli:commons-cli:1.5.0",
+        "org.junit.jupiter:junit-jupiter-api:5.10.0",
+        "org.junit.jupiter:junit-jupiter-engine:5.10.0",
+        "org.junit.platform:junit-platform-console:1.10.0",
+        "org.junit.platform:junit-platform-launcher:1.10.0",
+        "junit:junit:4.13.2",
+
+        # Checkstyle dependencies
+        "com.puppycrawl.tools:checkstyle:10.12.5",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ]
+)
+
+use_repo(maven, "maven")

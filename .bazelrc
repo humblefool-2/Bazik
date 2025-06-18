@@ -1,0 +1,15 @@
+# Grab proxy settings from env variables
+build --action_env=http_proxy
+build --action_env=https_proxy
+build --action_env=no_proxy
+
+
+# Performance optimization
+build --disk_cache=~/.bazel-cache
+build --repository_cache=~/.bazel-repo-cache
+
+# Disable strict dependency checking if needed
+common --check_direct_dependencies=off
+
+# Verbose output for dependency resolution
+common --verbose_failures

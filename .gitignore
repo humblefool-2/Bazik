@@ -1,0 +1,6 @@
+bazel-*
+.idea/
+*.iml
+.DS_Store
+.bazelsp
+MODULE.bazel.lock
