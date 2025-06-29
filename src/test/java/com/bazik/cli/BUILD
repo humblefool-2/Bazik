@@ -10,7 +10,7 @@ java_test(
         "--details=tree",
     ],
     deps = [
-        "//src/main/java/com/bazik/cli:bazik_cli",
+        "//src/main/java/com/bazik/cli:bazik",
         "//src/main/java/com/bazik/core:core",
         "@maven//:commons_cli_commons_cli",
         "@maven//:org_junit_jupiter_junit_jupiter_api",
